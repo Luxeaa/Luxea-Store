@@ -1,0 +1,112 @@
+/* Global Styles */
+:root {
+    --primary-color: #007AFF;
+    --secondary-color: #5856D6;
+}
+
+body {
+    padding-top: 56px;
+}
+
+/* Hero Section */
+.hero-slide {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay dengan Blur */
+.hero-slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Lapisan gelap transparan */
+    backdrop-filter: blur(2px); /* Efek blur */
+    z-index: 1;
+}
+
+/* Kontainer tetap di atas overlay */
+.hero-slide .container {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Product Cards */
+.product-card {
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    height: 200px;
+    object-fit: contain;
+}
+
+/* Cart Styles */
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 1rem;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-total {
+    padding: 1rem;
+    margin-top: 1rem;
+    border-top: 2px solid #dee2e6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-slide {
+        height: 400px;
+    }
+
+    .hero-slide h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-slide p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-slide {
+        height: 300px;
+    }
+
+    .hero-slide h1 {
+        font-size: 2rem;
+    }
+
+    .hero-slide p {
+        font-size: 1rem;
+    }
+}
